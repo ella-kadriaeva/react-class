@@ -2,10 +2,10 @@ import PaintingsList from './Painting/PaintingsList';
 import painting from './painting.json';
 import { Container } from './App.styled.js';
 import PageTitle from './EventBoard/PageTitle/PageTitle';
-import EventList from './EventBoard/EventList/EventList.js';
+
 import events from './EventBoard/events.json';
 import { ThemeProvider } from '@emotion/react';
-
+import Dropdown from './Dropdown/Dropdown';
 const theme = {
   colors: {
     white: '#ffffff',
@@ -22,7 +22,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Container>
         <PageTitle text="24th Core Worlds Coalition Conference" />
-        <EventList items={events} />
+        <Dropdown events={events} />
         <PaintingsList items={painting} />
       </Container>
     </ThemeProvider>

@@ -5,8 +5,11 @@ class PaintingsList extends Component {
   state = {
     value: this.props.initialValue,
   };
-  handleIncrement = () => {
+  handleIncrement = evt => {
+    console.log(evt);
     this.setState(prevState => {
+      evt.preventDefault();
+
       return { value: prevState.value + 1 };
     });
   };
