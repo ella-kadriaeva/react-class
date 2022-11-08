@@ -1,15 +1,22 @@
 import defaultImg from '../../default.jpg';
-export default function Painting({ item }) {
-  const { url = defaultImg, title, price, author, quantity } = item;
+
+export default function Painting({ value, item, onIncrement, onDecrement }) {
+  const { url = defaultImg, title, price, author } = item;
   return (
     <div>
-      <img src={url} alt={title} width="640" />
+      <img src={url} alt={title} width="380" />
       <h2>{title}</h2>
       <p>{price}</p>
       <p>
         Author: <a href={author.url}>{author.tag}</a>
       </p>
-      <p>Quantity: {quantity}</p>
+      <button type="button" onClick={onIncrement}>
+        +
+      </button>
+      <span>{value}</span>
+      <button type="button" onClick={onDecrement}>
+        -
+      </button>
     </div>
   );
 }
